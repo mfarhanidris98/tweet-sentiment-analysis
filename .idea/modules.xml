@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/data-processing/JsonToFile.iml" filepath="$PROJECT_DIR$/data-processing/JsonToFile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-reactjs/demo.iml" filepath="$PROJECT_DIR$/springboot-reactjs/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sentiment-rnn/sentiment-rnn.iml" filepath="$PROJECT_DIR$/sentiment-rnn/sentiment-rnn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tweet-sentiment-analysis.iml" filepath="$PROJECT_DIR$/.idea/tweet-sentiment-analysis.iml" />
+    </modules>
+  </component>
+</project>

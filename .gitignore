@@ -1,0 +1,6 @@
+dataset-processing/src/main/resources/
+springboot-reactjs/frontend/node_modules/
+sentiment-rnn/src/main/resources/tweets-labeled/test/neg/
+sentiment-rnn/src/main/resources/tweets-labeled/test/pos/
+sentiment-rnn/src/main/resources/tweets-labeled/train/neg/
+sentiment-rnn/src/main/resources/tweets-labeled/train/pos/

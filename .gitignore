@@ -5,3 +5,4 @@ sentiment-rnn/src/main/resources/tweets-labeled/test/pos/
 sentiment-rnn/src/main/resources/tweets-labeled/train/neg/
 sentiment-rnn/src/main/resources/tweets-labeled/train/pos/
 springboot-reactjs/src/main/resources/malay_word2vec/
+springboot-reactjs\twitter4j.properties

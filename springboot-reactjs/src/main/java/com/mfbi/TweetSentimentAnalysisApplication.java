@@ -28,11 +28,12 @@ public class TweetSentimentAnalysisApplication {
 
 	public static void getTweets() throws Exception {
 		ConfigurationBuilder cb = new ConfigurationBuilder();
+		/** Twitter api v2 token */
 		cb.setDebugEnabled(true)
-				.setOAuthConsumerKey("DpdVygsjBU4PIzJY5Ak5zOE7A")
-				.setOAuthConsumerSecret("MjnX1lK4f5yNUjFRpKRqZPY1hzx6Ouj6j05LcCnrlCFUq82hpN")
-				.setOAuthAccessToken("1318486078978809856-zWaot5hFxgOSCDvvABtr05KsNROPvw")
-				.setOAuthAccessTokenSecret("zdUv3b5bMWVXFlHWTkKmTr64KP4QPibEJUvrUqVUFwXYC");
+				.setOAuthConsumerKey("******************")
+				.setOAuthConsumerSecret("******************")
+				.setOAuthAccessToken("******************")
+				.setOAuthAccessTokenSecret("******************");
 		Twitter twitter = new TwitterFactory(cb.build()).getInstance();
 		EvaluateTweet evaluateTweet = new EvaluateTweet();
 		try {

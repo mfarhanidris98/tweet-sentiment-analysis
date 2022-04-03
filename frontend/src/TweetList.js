@@ -6,6 +6,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import React, { Component, useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
 import { TwitterTweetEmbed } from "react-twitter-embed";
+import Card from 'react-bootstrap/Card';
 
 class TweetList extends Component {
   setSentiment(str) {
@@ -70,6 +71,12 @@ class TweetList extends Component {
             }}
             tweetId={tweet.tweetId}
           />
+          <Card className="z-margin" style={{ width: '18rem' }}>
+            <Card.Body>
+              <Card.Title><div className={"" + (tweet.sentiment == "Positive" ? "z-pos-emoji" : "z-neg-emoji")}></div></Card.Title>
+              <Card.Subtitle className="mb-1 text-muted">Score: {tweet.score}</Card.Subtitle>
+            </Card.Body>
+          </Card>
         </div>
       </div>
       {/* <div>{tweet.text}</div>
@@ -84,6 +91,70 @@ class TweetList extends Component {
           {/* <Col lg="1">1 of 3</Col> */}
           <Col lg="10" className="d-flex flex-wrap">
             {tweetList}
+            {/* <div className="px-3 py-2 ">
+              <div className="z-glow-red">
+                <TwitterTweetEmbed
+                  onLoad={function noRefCheck() { }}
+                  options={{
+                    cards: 'hidden',
+                    hideCard: true,
+                    hideThread: false,
+                    maxWidth: 1000,
+                    width: 300
+                  }}
+                  tweetId="1509130847936745475"
+                />
+                <Card className="z-margin" style={{ width: '18rem' }}>
+                  <Card.Body>
+                    <Card.Title><div className="z-neg-emoji"></div></Card.Title>
+                    <Card.Subtitle className="mb-1 text-muted">Score: 0.7</Card.Subtitle>
+                  </Card.Body>
+                </Card>
+              </div>
+            </div>
+            <div className="px-3 py-2 ">
+              <div className="z-glow-blue">
+                <TwitterTweetEmbed
+                  onLoad={function noRefCheck() { }}
+                  options={{
+                    cards: 'hidden',
+                    hideCard: true,
+                    hideThread: false,
+                    maxWidth: 1000,
+                    width: 300
+                  }}
+                  tweetId="1509130214622003203"
+                />
+              </div>
+            </div><div className="px-3 py-2 " >
+              <div className="z-glow-blue">
+                <TwitterTweetEmbed
+                  onLoad={function noRefCheck() { }}
+                  options={{
+                    cards: 'hidden',
+                    hideCard: true,
+                    hideThread: false,
+                    maxWidth: 1000,
+                    width: 300
+                  }}
+                  tweetId="1509115325496799235"
+                />
+              </div>
+            </div><div className="px-3 py-2 ">
+              <div className="z-glow-blue">
+                <TwitterTweetEmbed
+                  onLoad={function noRefCheck() { }}
+                  options={{
+                    cards: 'hidden',
+                    hideCard: true,
+                    hideThread: false,
+                    maxWidth: 1000,
+                    width: 300
+                  }}
+                  tweetId="1509113736371802113"
+                />
+              </div>
+            </div> */}
             {/* <ListGroup.Item>
                 <div>Lorem ipsum</div>
                 <Badge bg="primary" pill>

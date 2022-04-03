@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import twitter4j.*;
+import twitter4j.conf.ConfigurationBuilder;
 
 import java.io.IOException;
 import java.net.URI;
@@ -26,7 +27,13 @@ public class TweetSentimentAnalysisApplication {
 	}
 
 	public static void getTweets() throws Exception {
-		Twitter twitter = new TwitterFactory().getInstance();
+		ConfigurationBuilder cb = new ConfigurationBuilder();
+		cb.setDebugEnabled(true)
+				.setOAuthConsumerKey("DpdVygsjBU4PIzJY5Ak5zOE7A")
+				.setOAuthConsumerSecret("MjnX1lK4f5yNUjFRpKRqZPY1hzx6Ouj6j05LcCnrlCFUq82hpN")
+				.setOAuthAccessToken("1318486078978809856-zWaot5hFxgOSCDvvABtr05KsNROPvw")
+				.setOAuthAccessTokenSecret("zdUv3b5bMWVXFlHWTkKmTr64KP4QPibEJUvrUqVUFwXYC");
+		Twitter twitter = new TwitterFactory(cb.build()).getInstance();
 		EvaluateTweet evaluateTweet = new EvaluateTweet();
 		try {
 			Query query = new Query(queryStr);
@@ -44,6 +51,7 @@ public class TweetSentimentAnalysisApplication {
 						put("text", tweet.getText());
 						put("sentiment", sentiment);
 						put("tweetId", 	Long.toString(tweet.getId()));
+						put("score", 	Double.toString(EvaluateTweet.score));
 					}};
 
 					var objectMapper = new ObjectMapper();

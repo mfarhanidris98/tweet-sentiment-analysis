@@ -23,6 +23,7 @@ public class Tweet {
     private String text;
     private String sentiment;
     private String tweetId;
+    private double score;
 
 
 }

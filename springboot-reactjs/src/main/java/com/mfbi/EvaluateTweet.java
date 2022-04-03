@@ -24,6 +24,7 @@ public class EvaluateTweet {
 
     public static int truncateReviewsToLength = 280;  //Truncate reviews with length (# words) greater than this
 
+    public static double score = 0;
     public static final int batchSize = 1;
 
     public static String text = "";
@@ -34,8 +35,12 @@ public class EvaluateTweet {
         System.out.println("----- Evaluation initializing -----");
 
         DATA_PATH = new File(new ClassPathResource("/").getPath()).getAbsolutePath();
-        WORD_VECTORS_PATH = new File(new ClassPathResource("/malay_word2vec/mswiki.vector").getPath()).getAbsolutePath();
-        trainedModelPath = new File(new ClassPathResource("/pretrained-models/trained-model.zip").getPath()).getAbsolutePath();
+
+        /** classpathresources path doesn't work, use absolutepath instead*/
+//        WORD_VECTORS_PATH = new File(new ClassPathResource("/malay_word2vec/mswiki.vector").getPath()).getAbsolutePath();
+//        trainedModelPath = new File(new ClassPathResource("/pretrained-models/trained-model.zip").getPath()).getAbsolutePath();
+        WORD_VECTORS_PATH ="D:\\code2\\tweet-sentiment-analysis-v2\\springboot-reactjs\\src\\main\\resources/malay_word2vec/mswiki.vector";
+        trainedModelPath = "D:\\code2\\tweet-sentiment-analysis-v2\\springboot-reactjs\\src\\main\\resources/pretrained-models/trained-model.zip";
         this.text = str;
 
         System.out.println("using command line arguement for trained model path: " + trainedModelPath);
@@ -75,10 +80,14 @@ public class EvaluateTweet {
 
         System.out.println("----- Evaluate complete -----");
 
-        if (val<0.5)
+        if (val<0.5) {
+            score = probabilitiesAtLastWord.getDouble(1);
             return false;
-        else
+        }
+        else {
+            score = probabilitiesAtLastWord.getDouble(0);
             return true;
+        }
     }
 
     //TODO apply more regex

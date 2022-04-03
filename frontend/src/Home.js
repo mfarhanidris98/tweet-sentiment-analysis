@@ -12,9 +12,9 @@ class Home extends Component {
       <div className="bg">
         <AppNavbar />
         <Container fluid className="bg">
-          <Button color="link">
+          {/* <Button color="link">
             <Link to="/clients">Clients</Link>
-          </Button>
+          </Button> */}
           <TweetList />
         </Container>
       </div>
